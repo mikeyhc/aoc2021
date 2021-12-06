@@ -18,7 +18,6 @@ advanced_sample_test() ->
     TestData = load_test_data("4-sample-0.txt"),
     {Called, Boards} = format_data(TestData),
     {Board, Values} = giant_squid:run_last(Boards, Called),
-    io:format("~p~n~p~n", [Board, Values]),
     ?assertEqual(1924, score_board(Board, Values)).
 
 advanced_test() ->

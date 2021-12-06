@@ -12,9 +12,6 @@ create_fishmap(Initial) ->
 
 run_simulation(0, Map) -> Map;
 run_simulation(N, Map0) ->
-    % lists:foreach(fun(V) -> io:format("~p: ~p~n", [V, maps:get(V, Map0, 0)]) end,
-    %               lists:seq(0, 8)),
-    % io:format("~p~n", [lists:sum(maps:values(Map0))]),
     Shift = fun(K, M) -> maps:put(K-1, maps:get(K, Map0, 0), M) end,
     Map1 = lists:foldl(Shift, Map0, lists:seq(1, 8)),
     Map2 = maps:update_with(6, fun(V) -> V + maps:get(0, Map0, 0) end, 0, Map1),
