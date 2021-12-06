@@ -21,7 +21,7 @@ power_bit(L) ->
     end.
 
 power_bits(Input) ->
-    TInput=[H|_] = transpose(Input),
+    TInput=[H|_] = list_utils:transpose(Input),
     Length = length(H),
     Fn = fun(L) ->
                  S = lists:sum(L),
@@ -44,17 +44,3 @@ bit_criteria(Input, Criteria) ->
            Tails = lists:map(fun tl/1, Matched),
            [Bit|bit_criteria(Tails, Criteria)]
     end.
-
-transpose(M) ->
-    transpose(M, []).
-
-transpose([], Acc) -> lists:reverse(Acc);
-transpose([[]|_], Acc) -> lists:reverse(Acc);
-transpose(M, Acc) ->
-    {V, Rest} = transpose_(M, [], []),
-    transpose(Rest, [V|Acc]).
-
-transpose_([], Heads, Tails) ->
-    {lists:reverse(Heads), lists:reverse(Tails)};
-transpose_([[H|T]|Rest], Heads, Tails) ->
-    transpose_(Rest, [H|Heads], [T|Tails]).
