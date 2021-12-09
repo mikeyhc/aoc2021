@@ -10,3 +10,4 @@ https://adventofcode.com/2021
 * [day 6 - lanternfish](src/lanternfish.erl)
 * [day 7 - the treachery of whales](src/treachery_of_whales.erl)
 * [day 8 - seven segment search](src/seven_segment_search.erl)
+* [day 9 - smoke basin](src/smoke_basin.erl)
