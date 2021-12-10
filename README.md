@@ -11,3 +11,4 @@ https://adventofcode.com/2021
 * [day 7 - the treachery of whales](src/treachery_of_whales.erl)
 * [day 8 - seven segment search](src/seven_segment_search.erl)
 * [day 9 - smoke basin](src/smoke_basin.erl)
+* [day 10 - syntax scoring](src/syntax_scoring.erl)
