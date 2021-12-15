@@ -5,7 +5,7 @@ build_map(Points) ->
     lists:foldl(fun(K, Acc) -> Acc#{K => true} end, #{}, Points).
 
 count_single_fold(Instruction, Map) ->
-    map:size(fold(Instruction, Map)).
+    maps:size(fold(Instruction, Map)).
 
 do_folds(Instructions, Map) ->
     lists:foldl(fun fold/2, Map, Instructions).
