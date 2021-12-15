@@ -15,3 +15,4 @@ https://adventofcode.com/2021
 * [day 11 - dumbo_octopus](src/dumbo_octopus.erl)
 * [day 12 - passage pathing](src/passage_pathing.erl)
 * [day 13 - transparent origami](src/transparent_origami.erl)
+* [day 14 - extended polymerization](src/extended_polymerization.erl)

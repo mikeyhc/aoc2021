@@ -5,9 +5,7 @@ build_map(Points) ->
     lists:foldl(fun(K, Acc) -> Acc#{K => true} end, #{}, Points).
 
 count_single_fold(Instruction, Map) ->
-    Map0 = fold(Instruction, Map),
-    % print_map(Map0),
-    maps:size(Map0).
+    map:size(fold(Instruction, Map)).
 
 do_folds(Instructions, Map) ->
     lists:foldl(fun fold/2, Map, Instructions).
@@ -24,16 +22,3 @@ fold({y, V}, Map) ->
             (Key, _, M) -> M#{Key => true}
          end,
     maps:fold(Fn, #{}, Map).
-
-print_map(Map) ->
-    io:format("~n"),
-    lists:foreach(fun(Y) -> print_map(Y, Map) end, lists:seq(0, 6)).
-
-print_map(Y, Map) ->
-    lists:foreach(fun(X) ->
-                          case maps:is_key({X, Y}, Map) of
-                              true -> io:format("#");
-                              false -> io:format(".")
-                          end
-                  end, lists:seq(0, 10)),
-    io:format("~n").
